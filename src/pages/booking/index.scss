@@ -1,0 +1,13 @@
+.booking-warpper {
+  display: block;
+  padding: 30px 15px;
+
+  .custom-form-item {
+    background-color: white;
+
+    &:nth-child(3),
+    &:nth-child(6) {
+      margin-bottom: 20px;
+    }
+  }
+}

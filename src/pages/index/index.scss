@@ -1,0 +1,141 @@
+@import '../styles.scss';
+
+.wrapper {
+  .tabs {
+    background-color: white;
+    margin: -15px -15px 20px;
+    padding: 0 20px;
+
+    .tab {
+      position: relative;
+      flex: 1;
+      line-height: 2.4;
+      white-space: nowrap;
+      text-align: center;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+      }
+
+      &.active {
+        color: themed('color');
+
+        &::after {
+          background-color: themed('color');
+        }
+      }
+    }
+  }
+
+  .nothing {
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    color: #afafaf;
+    margin-top: 50px;
+  }
+
+  .repair-box {
+    flex: auto;
+
+    .repair-group {
+      background-color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0px 0px 5px -1px themed('shadowColor');
+      font-size: 28px;
+
+      .repair-item {
+        display: flex;
+        align-items: center;
+        line-height: 40px;
+
+        .repair-item-title {
+          position: relative;
+          display: inline-block;
+          width: 120px;
+          text-align-last: justify;
+          margin-right: 15px;
+
+          &::after {
+            content: ':';
+            position: absolute;
+            left: 100%;
+          }
+        }
+
+        .repair-item-content {
+          &,
+          text {
+            flex: 1;
+            width: 0;
+          }
+
+          .action {
+            height: 40px;
+            line-height: 40px;
+            color: white;
+          }
+
+          $repairColors: (
+            todo: red,
+            doing: red,
+            tobe: #ffd55b,
+            done: themed('color')
+          );
+
+          @each $key, $color in $repairColors {
+            &.#{$key} {
+              text {
+                color: $color;
+              }
+
+              .action {
+                background-color: $color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .repair-add {
+    position: fixed;
+    right: 15px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: themed('color');
+    box-sizing: border-box;
+    box-shadow: 3px 3px 5px 0 themed('shadowColor');
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border-radius: 5px;
+    }
+
+    &::before {
+      width: 60px;
+      height: 5px;
+    }
+
+    &::after {
+      width: 5px;
+      height: 60px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.details-warpper {
+  display: block;
+  padding: 30px 15px;
+
+  .custom-form-item {
+    background-color: white;
+
+    &:nth-child(4),
+    &:nth-child(9),
+    &:nth-child(10) {
+      margin-bottom: 20px;
+    }
+  }
+}

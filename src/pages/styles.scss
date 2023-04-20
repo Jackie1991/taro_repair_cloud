@@ -1,0 +1,30 @@
+// 字号
+$fontSize: (
+  bbig: 34px,
+  big: 30px,
+  normal: 26px,
+  small: 22px,
+  mini: 20px
+);
+
+@function fontSize($key) {
+  @return map-get($fontSize, $key);
+}
+
+// 主色系
+$themes: (
+  color: #2d9dfb,
+  bgColor: #f8f8f8,
+  cardBgColor: white,
+  // 文本字体颜
+    titleColor: #23374d,
+  subTitleColor: #e5e5e5,
+  grayFontColor: gray,
+  cradRadius: 15px,
+  shadowColor: rgba(0, 0, 0, 0.3),
+  borderStyle: 1px solid #ececec
+);
+
+@function themed($key) {
+  @return map-get($themes, $key);
+}

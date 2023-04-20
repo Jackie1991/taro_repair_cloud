@@ -1,0 +1,63 @@
+/* 共用样式 */
+page,
+#app > div,
+.taro_page {
+  color: #333;
+  padding-bottom: constant(sate-area-inset-bottom);
+  padding-bottom: env(sate-area-inset-bottom);
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+html,
+body,
+page,
+#app > div,
+.taro_page {
+  height: 100%;
+}
+
+html,
+body,
+#app {
+  -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+/* 重置组件样式 */
+button::after {
+  border: 0;
+  display: none;
+}
+
+/* flex属性 */
+.flex {
+  display: flex;
+
+  &.column {
+    flex-direction: column;
+  }
+
+  &.ac {
+    align-items: center;
+  }
+
+  &.jc-c {
+    justify-content: center;
+  }
+
+  &.jc-sb {
+    justify-content: space-between;
+  }
+
+  .full {
+    flex: 1;
+  }
+}
